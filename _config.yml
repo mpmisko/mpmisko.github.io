@@ -3,8 +3,8 @@ title_left    : "Michal's "
 title_right   : "space" # default: ""
 description   : "AI Research"
 keywords      : "Artificial Intelligence, Machine learning, Robotics, College admissions, Self-driving vehicles"
-url           : https://heiswayi.github.io/thinkspace # site url
-baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
+url           : https://mpmisko.github.io # site url
+baseurl       : "mpmisko.github.io" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-214156803-1
