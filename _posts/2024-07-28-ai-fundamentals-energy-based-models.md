@@ -1,18 +1,10 @@
 ---
 layout: post
 title: "AI Fundamentals: Energy-Based Models"
-comments: false
 keywords: "AI, energy-based models"
 ---
 
-This blog post was inspired by [Bryan Johnson’s tweet](https://x.com/bryan_johnson/status/1767603894094631200) from last March:
-
-
-<p align="center">
-  <img src="/assets/images/intro.png" width="460"/>
-</p>
-
-This tweet caught my eye: "solve death" and "EBMs" in one sentence. I chuckled, remembering my last encounter with Energy-Based Models (EBMs). Many hours of training, diverging loss curves, and an existential crisis later, I felt much closer to the pits of hell than to the fountain of youth. All jokes aside, let’s dive into the beautiful beasts that are EBMs.
+Energy-Based Models (EBMs) define probability distributions by assigning an energy value to each possible data configuration. Lower energy corresponds to higher probability, which makes EBMs a flexible framework for generative modeling and representation learning. This post introduces the basic formulation, explains why normalization and sampling are difficult, and covers practical training methods such as Langevin dynamics and contrastive divergence.
 
 ## Generative models
 
@@ -222,9 +214,7 @@ While the examples above make it look like training EBMs is a piece of cake, the
 
 ### Conclusion and further reading
 
-Hope you enjoyed this deep dive into the world of Energy-Based Models!
-
-Remember Bryan Johnson's tweet that kicked off this whole exploration? Now we have the tools necessary to understand what Extropic proposes. [Extropic's idea](https://www.extropic.ai/future) seems to be to create physical systems where $E_\theta(x)$ is directly encoded in hardware. Instead of simulating Langevin dynamics on a digital computer, they're proposing to build circuits where this dynamics occurs naturally. I don't know enough about hardware to know whether this is viable, but it would be extremely exciting if it works. Better sampling from complex probability distributions could revolutionize how we approach probabilistic AI algorithms, especially those involving EBMs.
+EBMs provide a general way to define probabilistic models through energy functions, but their practical use depends heavily on the quality of sampling and the stability of training. The methods above are common starting points for working with these models in low-dimensional examples and for understanding the techniques used in larger systems.
 
 For those looking to dive deeper into EBMs and related topics, here are some recommended resources:
 

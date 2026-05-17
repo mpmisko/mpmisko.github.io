@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "How to write a good personal statement for UK universities"
-comments: true
 keywords: "College admissons, Oxford, Cambridge, UK, Undergraduate, UCAS"
 ---
 

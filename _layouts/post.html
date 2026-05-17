@@ -23,17 +23,9 @@ layout: default
       });
     </script>
     <script src="{{ '/assets/js/external-links.js' | relative_url }}"></script>
-    <script>
-      // Conditional loading of Twitter widget
-      if (document.querySelector('.twitter-tweet')) {
-        var script = document.createElement('script');
-        script.src = "https://platform.twitter.com/widgets.js";
-        script.async = true;
-        script.charset = "utf-8";
-        document.body.appendChild(script);
-      }
-    </script>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    {% if page.author %}
+      <p class="post-meta"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span></p>
+    {% endif %}
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
   </header>
   <div class="post-content" itemprop="articleBody">
@@ -41,5 +33,3 @@ layout: default
     {% include post-share.html %}
   </div>
 </article>
-
-{% include comments.html %}

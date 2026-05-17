@@ -1,21 +1,20 @@
 # Site settings
-title_left: "Michal's "
-title_right: "corner" # default: ""
-description: "Personal blog of Michal Pándy. Come for the AI, stay for the jokes." # site description
+title: "Michal Pandy"
+title_left: "Michal "
+title_right: "Pandy" # default: ""
+description: "Michal Pandy" # site description
 keywords: "Business, Founders, Artificial Intelligence, Machine learning, Robotics, College admissions, Self-driving vehicles"
 url: https://mpmisko.github.io # site url
 baseurl: "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
-cover: "/assets/images/brain.svg" # image uri like logo/cover image for site seo
-favicon: "/assets/images/brain.svg" # site favicon
+cover: "/assets/images/curiosity.svg" # image uri like logo/cover image for site seo
+favicon: "/assets/images/curiosity.svg" # site favicon
 
 google_analytics: G-CH67VSC667
 twitter_username: "@michal_pandy"
-comments_enabled: true # if enabled (set to true), please provide your disqus_username
-disqus_shortname: "michalpandy"
 postshare_enabled: true
 
 # Build settings
-permalink: /:year/:title/
+permalink: /:title/
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -45,6 +44,10 @@ plugins:
   - jekyll-sitemap
   - bourbon
   - jekyll-paginate
+
+include:
+  - assets/images/world_model_rollout.gif
+  - assets/images/world_model_imagination.gif
 
 # navbar pages
 navbar:
