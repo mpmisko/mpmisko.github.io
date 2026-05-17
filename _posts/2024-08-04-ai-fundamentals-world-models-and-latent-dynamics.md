@@ -213,7 +213,7 @@ The gridworld above uses planning. It learns transition probabilities, estimates
 
 ## Why this matters outside toy grids
 
-The practical version of a world model is usually not a single grand simulator of everything. It is a learned predictive model inside a system that needs to ask: *if we do this, what probably happens next?*
+In practice, a world model is usually a learned predictive model inside a system that needs to ask: *if we do this, what probably happens next?*
 
 Self-driving is the easiest real example to picture. The car does not only need to detect lanes, cars, cyclists, and pedestrians in the current frame. It needs to forecast how the scene may evolve under possible actions. If the ego car slows down, will the pedestrian keep crossing? If it nudges left, will the neighboring car yield or close the gap? If it waits one more second, does the intersection become safer or more ambiguous?
 
@@ -223,9 +223,9 @@ $$
 \text{current traffic scene, ego action} \rightarrow \text{future traffic scene, risk}
 $$
 
-The useful model is not necessarily the one that renders the prettiest future video. It is the one that preserves the variables that change the driving decision: positions, velocities, road geometry, right of way, intent, and uncertainty. A blurry prediction that correctly says "this cyclist might enter my lane" is more useful than a photorealistic prediction that is overconfident in the wrong future.
+A useful model can be ugly as long as it keeps track of the things that would change the driving decision: where everyone is, how fast they are moving, who has right of way, and how unsure we should be. A rough prediction that says "this cyclist might enter my lane" is better than a beautiful prediction that is confidently wrong.
 
-The common pattern is expensive interaction. You would rather make a thousand mistakes inside the model than one dangerous mistake outside it. But this also creates the central risk: if the model is confidently wrong, the agent may optimize against a fantasy. In real applications, world models are useful only when their uncertainty is taken seriously and their imagined futures are constantly checked against fresh real data.
+That is the appeal of world models: make the cheap mistakes in imagination before making an expensive one in the world. It is also the danger. If the imagined world is wrong, the agent can learn to exploit the mistake. The model has to know when it is uncertain, and the system has to keep checking its imagination against reality.
 
 ## Dreamer
 
@@ -267,7 +267,7 @@ $$
 \hat{\pi}_t, \hat{v}_t = f_\psi(z_t)
 $$
 
-That is a useful way to think about world models for control. The model does not have to predict everything. It has to predict the parts of the future that would change the decision.
+That is a useful way to think about world models for control. Predicting the parts of the future that would change the decision matters more than predicting everything.
 
 ## Further reading
 
